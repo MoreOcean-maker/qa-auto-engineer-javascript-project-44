@@ -79,5 +79,3 @@ startGame();
 
 // Экспорт функции startGame (если потребуется в других модулях)
 export default startGame;
-
-
