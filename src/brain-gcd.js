@@ -39,15 +39,12 @@ const startGame = () => {
       correctAnswersCount++;
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      console.log(`Let's try again, ${userName}!`);
-      break;  // Завершаем игру при неправильном ответе
+      return;  // Завершаем игру при неправильном ответе
     }
   }
 
-  // Проверяем, завершена ли игра победой или поражением
-  if (correctAnswersCount === roundsToWin) {
-    console.log(`Congratulations, ${userName}! You won the game!`);
-  }
+  // Победное сообщение после 3 правильных ответов
+  console.log(`Congratulations, ${userName}! You won the game!`);
 };
 
 // Запуск игры

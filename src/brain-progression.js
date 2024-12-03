@@ -31,9 +31,9 @@ const startGame = () => {
   console.log('What number is missing in the progression?');
 
   let correctAnswers = 0;
-  let wrongAnswers = 0;
+  const roundsToWin = 3; // Количество правильных ответов для победы
 
-  while (correctAnswers < 3 && wrongAnswers < 1) {
+  while (correctAnswers < roundsToWin) {
     // Генерация прогрессии
     const { progression, hiddenNumber } = generateProgression();
     
@@ -46,18 +46,16 @@ const startGame = () => {
       correctAnswers += 1;
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${hiddenNumber}'.`);
-      console.log(`Let's try again, ${userName}!`);
-      wrongAnswers += 1;
+      return;  // Завершаем игру при неправильном ответе
     }
   }
 
-  // Завершаем игру в зависимости от исхода
-  if (correctAnswers === 3) {
-    console.log(`Congratulations, ${userName}!`);
-  } else {
-    console.log('Game over!');
-  }
+  // Победное сообщение после 3 правильных ответов
+  console.log(`Congratulations, ${userName}! You won the game!`);
 };
+
+// Запуск игры
+startGame();
 
 // Экспорт функции startGame
 export default startGame;

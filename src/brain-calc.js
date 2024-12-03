@@ -58,8 +58,7 @@ const playGame = (name) => {
       correctAnswers += 1;
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      console.log(`Let's try again, ${name}!`);
-      return; // Завершаем игру, если был неправильный ответ
+      return; // Завершаем игру сразу после неправильного ответа
     }
   }
 

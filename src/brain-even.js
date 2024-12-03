@@ -40,7 +40,7 @@ const playGame = (name) => {
   console.log(`Congratulations, ${name}!`);
 };
 
-// Функция запуска игры
+// Функция для начала игры
 const startGame = () => {
   const name = greetUser(); // Приветствие и получение имени пользователя
   playGame(name); // Запуск основной логики игры
