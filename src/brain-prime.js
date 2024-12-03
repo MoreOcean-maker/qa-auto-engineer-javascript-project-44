@@ -42,7 +42,7 @@ const startGame = () => {
       correctAnswers += 1;
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      console.log(`Game over, ${userName}! Let's try again.`);
+      console.log(`Let's try again, ${userName}! `);
       process.exit(0);  // Завершаем игру при неправильном ответе
     }
   }
