@@ -32,12 +32,13 @@ const playGame = (name) => {
     } else {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${isEven(number) ? 'yes' : 'no'}'.`);
       console.log(`Let's try again, ${name}!`);
-      return; // Завершаем игру, если был неправильный ответ
+      process.exit(1); // Завершаем игру с кодом ошибки (неправильный ответ)
     }
   }
 
   // Победное сообщение после 3 правильных ответов
   console.log(`Congratulations, ${name}!`);
+  process.exit(0); // Завершаем игру успешно после 3 правильных ответов
 };
 
 // Функция для начала игры
