@@ -17,3 +17,7 @@ https://asciinema.org/connect/67e3b167-0155-410c-9b40-e12e9e437cd7
 3. Здесь запись работы игры по поиску наибольшего общего делителя
 
 https://asciinema.org/connect/67e3b167-0155-410c-9b40-e12e9e437cd7
+
+4. Здесь запись работы игры "Арифметическая прогрессия"
+
+https://asciinema.org/connect/67e3b167-0155-410c-9b40-e12e9e437cd7
