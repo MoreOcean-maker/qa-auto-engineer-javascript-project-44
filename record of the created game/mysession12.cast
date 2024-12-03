@@ -1,0 +1,8 @@
+{"version": 2, "width": 80, "height": 24, "timestamp": 1733224257, "env": {"SHELL": "/bin/bash", "TERM": "xterm-256color"}}
+[0.031116, "o", "\u001b[?2004h\u001b]0;vboxuser@Linux: ~/qa-auto-engineer-javascript-project-44\u0007\u001b[01;32mvboxuser@Linux\u001b[00m:\u001b[01;34m~/qa-auto-engineer-javascript-project-44\u001b[00m$ "]
+[0.560077, "o", "node bin/brain.progression.js"]
+[2.10809, "o", "\r\n"]
+[2.108272, "o", "\u001b[?2004l\r"]
+[2.248486, "o", "node:internal/modules/cjs/loader:1251\r\n  throw err;\r\n  ^\r\n\r\nError: Cannot find module '/home/vboxuser/qa-auto-engineer-javascript-project-44/bin/brain.progression.js'\r\n\u001b[90m    at Module._resolveFilename (node:internal/modules/cjs/loader:1248:15)\u001b[39m\r\n\u001b[90m    at Module._load (node:internal/modules/cjs/loader:1074:27)\u001b[39m\r\n\u001b[90m    at TracingChannel.traceSync (node:diagnostics_channel:315:14)\u001b[39m\r\n\u001b[90m    at wrapModuleLoad (node:internal/modules/cjs/loader:217:24)\u001b[39m\r\n\u001b[90m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:166:5)\u001b[39m\r\n\u001b[90m    at node:internal/main/run_main_module:30:49\u001b[39m {\r\n  code: \u001b[32m'MODULE_NOT_FOUND'\u001b[39m,\r\n  requireStack: []\r\n}\r\n\r\nNode.js v22.9.0\r\n"]
+[2.25352, "o", "\u001b[?2004h\u001b]0;vboxuser@Linux: ~/qa-auto-engineer-javascript-project-44\u0007\u001b[01;32mvboxuser@Linux\u001b[00m:\u001b[01;34m~/qa-auto-engineer-javascript-project-44\u001b[00m$ "]
+[10.674939, "o", "\u001b[?2004l\r\r\nexit\r\n"]
