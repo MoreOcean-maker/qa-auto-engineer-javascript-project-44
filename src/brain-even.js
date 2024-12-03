@@ -5,16 +5,17 @@ import readlineSync from 'readline-sync';
 // Функция для проверки, является ли число четным
 const isEven = (number) => number % 2 === 0;
 
-// Приветствие и запрос имени пользователя
-console.log('Welcome to the Brain Games!');
-const name = readlineSync.question('May I have your name? ');
-console.log(`Hello, ${name}!`);
+// Функция приветствия и запроса имени
+const greetUser = () => {
+  console.log('Welcome to the Brain Games!');
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}!`);
+  return name;
+};
 
-// Основная логика игры
-console.log('Answer "yes" if the number is even, otherwise answer "no".');
-
-// Функция для игры
-const playGame = () => {
+// Функция основной логики игры
+const playGame = (name) => {
+  console.log('Answer "yes" if the number is even, otherwise answer "no".');
   let correctAnswers = 0;
 
   // Игра продолжается до тех пор, пока не будет 3 правильных ответа подряд
@@ -39,5 +40,15 @@ const playGame = () => {
   console.log(`Congratulations, ${name}!`);
 };
 
+// Функция запуска игры
+const startGame = () => {
+  const name = greetUser(); // Приветствие и получение имени пользователя
+  playGame(name); // Запуск основной логики игры
+};
+
 // Запуск игры
-playGame();
+startGame();
+
+// Экспорт функции startGame
+export default startGame;
+

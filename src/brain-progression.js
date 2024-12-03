@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import readlineSync from 'readline-sync';
 
 // Функция для генерации прогрессии
@@ -61,6 +59,6 @@ const startGame = () => {
   }
 };
 
-// Запуск игры
-startGame();
+// Экспорт функции startGame
+export default startGame;
 

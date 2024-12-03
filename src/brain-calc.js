@@ -33,16 +33,17 @@ const generateQuestion = () => {
   return { question, correctAnswer };
 };
 
-// Приветствие и запрос имени пользователя
-console.log('Welcome to the Brain Games!');
-const name = readlineSync.question('May I have your name? ');
-console.log(`Hello, ${name}!`);
+// Функция приветствия и запроса имени
+const greetUser = () => {
+  console.log('Welcome to the Brain Games!');
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}!`);
+  return name;
+};
 
 // Основная логика игры
-console.log('What is the result of the expression?');
-
-// Функция для игры
-const playGame = () => {
+const playGame = (name) => {
+  console.log('What is the result of the expression?');
   let correctAnswers = 0;
 
   // Игра продолжается до тех пор, пока не будет 3 правильных ответа подряд
@@ -66,5 +67,15 @@ const playGame = () => {
   console.log(`Congratulations, ${name}!`);
 };
 
+// Функция запуска игры
+const startGame = () => {
+  const name = greetUser(); // Получаем имя пользователя
+  playGame(name); // Запускаем игру
+};
+
 // Запуск игры
-playGame();
+startGame();
+
+// Экспорт функции startGame (если потребуется в других модулях)
+export default startGame;
+

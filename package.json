@@ -10,11 +10,11 @@
   "license": "ISC",
   "type": "module",
   "bin": {
-    "brain-games": "src/brain-games.js",
-    "brain-even": "./src/brain-even.js",
-    "brain-calc": "./src/brain-calc",
-    "brain-gcd": "./src/brain-gcd.js",
-    "brain-progression": "./src/brain-progression.js"
+    "brain-games": "bin/brain-games.js",
+    "brain-even": "./bin/brain-even.js",
+    "brain-calc": "./bin/brain-calc",
+    "brain-gcd": "./bin/brain-gcd.js",
+    "brain-progression": "./bin/brain-progression.js"
   },
   "dependencies": {
     "readline-sync": "^1.4.10"

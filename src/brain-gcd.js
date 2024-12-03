@@ -53,3 +53,6 @@ const startGame = () => {
 // Запуск игры
 startGame();
 
+// Экспорт функции startGame
+export default startGame;
+
