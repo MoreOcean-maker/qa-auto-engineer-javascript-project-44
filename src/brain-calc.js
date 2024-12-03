@@ -58,12 +58,14 @@ const playGame = (name) => {
       correctAnswers += 1;
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      return; // Завершаем игру сразу после неправильного ответа
+      console.log(`Game over! Let's try again, ${name}!`);
+      process.exit(0); // Завершаем игру после неправильного ответа
     }
   }
 
   // Победное сообщение после 3 правильных ответов
   console.log(`Congratulations, ${name}!`);
+  process.exit(0); // Явное завершение процесса после победы
 };
 
 // Функция запуска игры
@@ -77,4 +79,5 @@ startGame();
 
 // Экспорт функции startGame (если потребуется в других модулях)
 export default startGame;
+
 

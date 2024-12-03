@@ -42,12 +42,14 @@ const startGame = () => {
       correctAnswers += 1;
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      return;  // Завершаем игру при неправильном ответе
+      console.log(`Game over, ${userName}! Let's try again.`);
+      process.exit(0);  // Завершаем игру при неправильном ответе
     }
   }
 
   // Победное сообщение после 3 правильных ответов
   console.log(`Congratulations, ${userName}! You won the game!`);
+  process.exit(0);  // Явное завершение игры после победы
 };
 
 // Запуск игры
