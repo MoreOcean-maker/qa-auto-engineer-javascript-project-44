@@ -39,7 +39,7 @@ const startGame = () => {
       correctAnswersCount++;
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      console.log(`Let's try again,${userName}!`);
+      console.log(`Let's try again, ${userName}!`);
       process.exit(0);  // Завершаем игру при неправильном ответе
     }
   }
