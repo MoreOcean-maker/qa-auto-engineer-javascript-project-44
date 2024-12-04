@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import readlineSync from 'readline-sync';
 
 // Функция для проверки, является ли число четным
@@ -47,8 +45,10 @@ const startGame = () => {
   playGame(name); // Запуск основной логики игры
 };
 
-// Запуск игры
-startGame();
+// Проверка: выполняется ли скрипт напрямую или импортируется как модуль
+if (require.main === module) {
+  startGame();
+}
 
 // Экспорт функции startGame
 export default startGame;
