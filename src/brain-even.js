@@ -1,3 +1,4 @@
+
 import readlineSync from 'readline-sync';
 
 // Функция для проверки, является ли число четным
@@ -46,7 +47,7 @@ const startGame = () => {
 };
 
 // Проверка: выполняется ли скрипт напрямую или импортируется как модуль
-if (require.main === module) {
+if (import.meta.url === `file://${process.argv[1]}`) {
   startGame();
 }
 
