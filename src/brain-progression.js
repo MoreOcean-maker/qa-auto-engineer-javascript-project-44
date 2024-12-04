@@ -7,7 +7,7 @@ const generateProgression = () => {
   const length = Math.floor(Math.random() * 6) + 5; // длина прогрессии от 5 до 10
   const progression = [];
 
-  for (let i = 0; i < length; i = i + 1) {  // заменили ++ на явное увеличение
+  for (let i = 0; i < length; i += 1) {
     progression.push(start + i * step);
   }
 
@@ -41,7 +41,7 @@ const startGame = () => {
     const userAnswer = readlineSync.question(`Question: ${progression}\nYour answer: `);
 
     // Проверка ответа пользователя
-    if (parseInt(userAnswer, 10) === hiddenNumber) {  // добавили radix
+    if (parseInt(userAnswer, 10) === hiddenNumber) {
       console.log('Correct!');
       correctAnswers += 1;
     } else {
@@ -61,4 +61,3 @@ startGame();
 
 // Экспорт функции startGame
 export default startGame;
-

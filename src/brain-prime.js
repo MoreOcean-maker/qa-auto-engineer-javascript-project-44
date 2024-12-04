@@ -8,7 +8,7 @@ const isPrime = (number) => {
     return false; // Числа меньше или равные 1 не простые
   }
 
-  for (let i = 2; i <= Math.sqrt(number); i++) {
+  for (let i = 2; i <= Math.sqrt(number); i += 1) {
     if (number % i === 0) {
       return false; // Число делится на i, значит оно не простое
     }
@@ -57,5 +57,3 @@ startGame();
 
 // Экспорт функции startGame
 export default startGame;
-
-

@@ -7,4 +7,3 @@ const welcomeUser = () => {
 };
 
 export default welcomeUser;
-
