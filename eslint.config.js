@@ -7,10 +7,9 @@ export default [
     languageOptions: {
       globals: {
         ...globals.browser, // Оставляем глобальные переменные для браузера
-        ...globals.node,    // Добавляем глобальные переменные для Node.js (например, process)
+        ...globals.node,
       },
     },
   },
   pluginJs.configs.recommended,
 ];
-

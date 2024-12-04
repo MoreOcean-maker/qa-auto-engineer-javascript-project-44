@@ -19,4 +19,3 @@ export default [
   },
   ...compat.extends('airbnb'), // Заменены двойные кавычки на одинарные
 ];
-
