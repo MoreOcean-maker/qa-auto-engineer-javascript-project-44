@@ -1,4 +1,3 @@
-
 import readlineSync from 'readline-sync';
 
 // Функция для проверки, является ли число четным
