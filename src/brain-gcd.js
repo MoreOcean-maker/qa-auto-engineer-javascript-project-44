@@ -34,7 +34,7 @@ const startGame = () => {
     const userAnswer = readlineSync.question(`Question: ${num1} ${num2}\nYour answer: `);
 
     // Проверка ответа пользователя
-    if (parseInt(userAnswer) === correctAnswer) {
+    if (parseInt(userAnswer, 10) === correctAnswer) {  // Указан radix
       console.log('Correct!');
       correctAnswersCount++;
     } else {
@@ -54,3 +54,4 @@ startGame();
 
 // Экспорт функции startGame
 export default startGame;
+
