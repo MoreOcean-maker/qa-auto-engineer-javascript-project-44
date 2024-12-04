@@ -58,4 +58,3 @@ startGame();
 
 // Экспорт функции startGame
 export default startGame;
-
