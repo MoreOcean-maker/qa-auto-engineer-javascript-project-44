@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import readlineSync from 'readline-sync';
 
 // Функция для проверки простоты числа
@@ -52,8 +50,10 @@ const startGame = () => {
   process.exit(0); // Явное завершение игры после победы
 };
 
-// Запуск игры
-startGame();
+// Запуск игры, только если файл запускается напрямую
+if (require.main === module) {
+  startGame();
+}
 
 // Экспорт функции startGame
 export default startGame;

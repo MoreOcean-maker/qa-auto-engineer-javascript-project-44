@@ -46,7 +46,7 @@ const startGame = () => {
       correctAnswers += 1;
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${hiddenNumber}'.`);
-      console.log(`Let's try again, ${userName}! `);
+      console.log(`Let's try again, ${userName}!`);
       process.exit(0); // Завершаем игру при неправильном ответе
     }
   }
@@ -56,8 +56,10 @@ const startGame = () => {
   process.exit(0); // Явное завершение игры после победы
 };
 
-// Запуск игры
-startGame();
+// Запуск игры, только если файл выполняется напрямую
+if (require.main === module) {
+  startGame();
+}
 
 // Экспорт функции startGame
 export default startGame;

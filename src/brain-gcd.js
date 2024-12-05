@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import readlineSync from 'readline-sync';
 
 // Функция для нахождения НОД с использованием алгоритма Евклида
@@ -35,26 +33,36 @@ const startGame = () => {
 
     // Вопрос пользователю
     const correctAnswer = gcd(num1, num2);
-    const userAnswer = readlineSync.question(`Question: ${num1} ${num2}\nYour answer: `);
+    console.log(`Question: ${num1} ${num2}`);
+    const userInput = readlineSync.question('Your answer: ');
+
+    // Проверка валидности ввода
+    const userAnswer = parseInt(userInput, 10);
+    if (isNaN(userAnswer)) {
+      console.log("Please enter a valid number.");
+      continue;
+    }
 
     // Проверка ответа пользователя
-    if (parseInt(userAnswer, 10) === correctAnswer) {
+    if (userAnswer === correctAnswer) {
       console.log('Correct!');
       correctAnswersCount += 1;
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+      console.log(`'${userInput}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${userName}!`);
-      process.exit(0); // Завершаем игру при неправильном ответе
+      return; // Завершаем игру после неправильного ответа
     }
   }
 
   // Победное сообщение после 3 правильных ответов
   console.log(`Congratulations, ${userName}! You won the game!`);
-  process.exit(0); // Явное завершение игры после победы
 };
 
-// Запуск игры
-startGame();
+// Проверка: выполняется ли скрипт напрямую
+if (import.meta.main) {
+  startGame();
+}
 
 // Экспорт функции startGame
 export default startGame;
+
