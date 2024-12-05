@@ -27,4 +27,4 @@ const gcdGameLogic = () => {
 };
 
 // Запуск игры с использованием основной логики
-runGame(gcdGameLogic);
+export default runGame(gcdGameLogic);
