@@ -39,11 +39,11 @@ const startGame = () => {
     // Проверка валидности ввода
     const userAnswer = parseInt(userInput, 10);
 
-    // Обработка неправильного ввода
+    // Если ввод неверный, повторяем запрос
     if (Number.isNaN(userAnswer)) {
       console.log('Please enter a valid number.');
       
-      continue;
+      return startGame(); // Рекурсивный вызов игры для нового ввода
     }
 
     // Проверка ответа пользователя
