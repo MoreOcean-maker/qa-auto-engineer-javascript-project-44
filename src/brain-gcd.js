@@ -8,23 +8,24 @@ const gcdGameLogic = () => {
 
   // Функция для нахождения НОД
   const gcd = (a, b) => {
-    let x = a;
+    let x = a;  // Используем локальные переменные
     let y = b;
 
-    while (num2 !== 0) {
-      const temp = num2;
-      num2 = num1 % num2;
-      num1 = temp;
+    while (y !== 0) {  // Используем y, а не num2
+      const temp = y;
+      y = x % y;  // Используем x и y для вычислений
+      x = temp;
     }
 
-    return num1; // Возвращаем результат НОД
+    return x;  // Возвращаем результат НОД
   };
 
-  const correctAnswer = gcd(num1, num2);
-  const question = `${num1} ${num2}`; // Формируем вопрос
+  const correctAnswer = gcd(num1, num2);  // Нахождение НОД
+  const question = `${num1} ${num2}`;  // Формирование вопроса
 
   return { question, correctAnswer: correctAnswer.toString() };
 };
 
 // Экспортируем только логику игры
 export default gcdGameLogic;
+
