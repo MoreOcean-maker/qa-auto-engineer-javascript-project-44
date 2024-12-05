@@ -16,13 +16,15 @@ const runGame = (gameLogic) => {
   // Игра продолжается до тех пор, пока не будет 3 правильных ответа подряд
   while (correctAnswers < 3) {
     // Запуск уникальной логики игры
-    const { question, correctAnswer } = gameLogic();
+    const gameData = gameLogic();
 
-    // Проверяем, что gameLogic возвращает корректные значения
-    if (!question || !correctAnswer) {
-      console.log('Error: gameLogic must return an object with question and correctAnswer.');
-      process.exit(1);
+    // Проверяем, что gameLogic возвращает объект с корректными полями
+    if (!gameData || !gameData.question || !gameData.correctAnswer) {
+      console.log('Error: gameLogic must return an object with "question" and "correctAnswer" properties.');
+      process.exit(1); // Завершаем игру с ошибкой
     }
+
+    const { question, correctAnswer } = gameData;
 
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ').toLowerCase();
@@ -40,7 +42,7 @@ const runGame = (gameLogic) => {
 
   // Победное сообщение после 3 правильных ответов
   console.log(`Congratulations, ${name}!`);
-  process.exit(0);
+  process.exit(0); // Завершаем игру с успехом
 };
 
 export default runGame;
