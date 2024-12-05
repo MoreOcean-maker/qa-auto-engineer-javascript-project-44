@@ -42,7 +42,7 @@ const startGame = () => {
     // Если ввод неверный, повторяем запрос
     if (Number.isNaN(userAnswer)) {
       console.log('Please enter a valid number.');
-      return startGame(); // Рекурсивный вызов игры для нового ввода
+      return false; // Возвращаем false для прекращения игры при ошибочном вводе
     }
 
     // Проверка ответа пользователя
@@ -52,14 +52,13 @@ const startGame = () => {
     } else {
       console.log(`'${userInput}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${userName}!`);
-      return; // Завершаем игру после неправильного ответа
+      return false; // Завершаем игру после неправильного ответа
     }
   }
 
   // Победное сообщение после 3 правильных ответов
   console.log(`Congratulations, ${userName}! You won the game!`);
-
-  return true; // Явный возврат в конце игры для соблюдения правила consistent-return
+  return true; // Возвращаем true после победы
 };
 
 // Проверка: выполняется ли скрипт напрямую
