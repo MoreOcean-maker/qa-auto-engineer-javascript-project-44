@@ -1,4 +1,3 @@
-import readlineSync from 'readline-sync';
 import runGame from './gameEngine.js'; // Импортируем игровой движок
 
 // Функция для генерации случайного выражения и его результата
@@ -29,7 +28,7 @@ const generateQuestion = () => {
       break;
   }
 
-  return { question, correctAnswer: correctAnswer.toString() }; // Возвращаем правильный ответ как строку
+  return { question, correctAnswer: correctAnswer.toString() };
 };
 
 // Описание игры
@@ -49,7 +48,7 @@ const playMathGame = () => {
   return { question, correctAnswer };
 };
 
-// Функция для запуска игрыs
+// Функция для запуска игры
 const startMathGame = () => {
   console.log(description); // Выводим описание игры
   runGame(playMathGame); // Передаем логику игры в игровой движок
