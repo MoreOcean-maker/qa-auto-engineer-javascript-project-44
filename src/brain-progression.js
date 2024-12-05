@@ -1,4 +1,4 @@
-console.log('What number is missing in the progression?')
+console.log('What number is missing in the progression?');
 // Функция для генерации прогрессии
 const generateProgression = () => {
   const start = Math.floor(Math.random() * 10) + 1; // начальное число прогрессии
@@ -29,10 +29,5 @@ const progressionGameLogic = () => {
   return { question, correctAnswer }; // Возвращаем вопрос и правильный ответ
 };
 
-// Описание игры
-const description = 'What number is missing in the progression?';
-
 // Экспортируем функцию логики игры для использования в runGame
 export default progressionGameLogic;
-
-
