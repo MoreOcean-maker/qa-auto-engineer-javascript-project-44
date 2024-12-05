@@ -1,4 +1,4 @@
-
+console.log('What number is missing in the progression?')
 // Функция для генерации прогрессии
 const generateProgression = () => {
   const start = Math.floor(Math.random() * 10) + 1; // начальное число прогрессии
