@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { runGame } from './gameEngine.js'; // Импортируем игровой движок
+import runGame from './gameEngine.js'; // Импортируем игровой движок
 
 // Функция для проверки, является ли число четным
 const isEven = (number) => number % 2 === 0;
