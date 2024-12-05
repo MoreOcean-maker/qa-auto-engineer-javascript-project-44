@@ -40,8 +40,8 @@ const startGame = () => {
     const userAnswer = parseInt(userInput, 10);
     if (Number.isNaN(userAnswer)) {
       console.log('Please enter a valid number.');
-      // Пропускаем текущую итерацию, но без continue
-      continue; // Здесь можно оставить, если линтер это не запрещает
+      // Просто пропускаем текущую итерацию, но без continue
+      continue;
     }
 
     // Проверка ответа пользователя
@@ -66,3 +66,4 @@ if (import.meta.main) {
 
 // Экспорт функции startGame
 export default startGame;
+
