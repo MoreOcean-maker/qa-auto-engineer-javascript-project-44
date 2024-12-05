@@ -1,4 +1,4 @@
-import readlineSync from 'readline-sync';
+import runGame from './gameEngine.js'; // Импортируем движок
 
 // Функция для проверки простоты числа
 const isPrime = (number) => {
@@ -14,46 +14,14 @@ const isPrime = (number) => {
   return true; // Число простое
 };
 
-// Функция для начала игры
-const startGame = () => {
-  console.log('Welcome to the Brain Games!');
+// Логика игры для проверки простоты числа
+const primeGameLogic = () => {
+  // Генерация случайного числа
+  const question = Math.floor(Math.random() * 100) + 1;
+  const correctAnswer = isPrime(question) ? 'yes' : 'no';
 
-  // Запрос имени пользователя
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}!`);
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-
-  let correctAnswers = 0;
-  const roundsToWin = 3; // Количество правильных ответов для победы
-
-  while (correctAnswers < roundsToWin) {
-    // Генерация случайного числа
-    const question = Math.floor(Math.random() * 100) + 1;
-    const correctAnswer = isPrime(question) ? 'yes' : 'no';
-
-    // Вопрос пользователю
-    const userAnswer = readlineSync.question(`Question: ${question}\nYour answer: `);
-
-    // Проверка ответа пользователя
-    if (userAnswer === correctAnswer) {
-      console.log('Correct!');
-      correctAnswers += 1;
-    } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      console.log(`Let's try again, ${userName}!`);
-      process.exit(0); // Завершаем игру при неправильном ответе
-    }
-  }
-
-  // Победное сообщение после 3 правильных ответов
-  console.log(`Congratulations, ${userName}! You won the game!`);
-  process.exit(0); // Явное завершение игры после победы
+  return { question: `${question}`, correctAnswer }; // Возвращаем вопрос и правильный ответ
 };
 
-// Запуск игры, только если файл запускается напрямую
-if (import.meta.url === new URL(`file://${process.argv[1]}`)) {
-  startGame();
-}
-
-// Экспорт функции startGame
-export default startGame;
+// Экспортируем только логику игры
+export default primeGameLogic;
