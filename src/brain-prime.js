@@ -1,5 +1,4 @@
-import runGame from './gameEngine.js'; // Импортируем движок
-
+console.log ('Answer "yes" if given number is prime. Otherwise answer "no".');
 // Функция для проверки простоты числа
 const isPrime = (number) => {
   if (number <= 1) {
