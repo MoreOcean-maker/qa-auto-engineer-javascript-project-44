@@ -7,9 +7,6 @@ const isEven = (number) => number % 2 === 0;
 const playEvenGame = () => {
   const number = Math.floor(Math.random() * 100); // Случайное число от 0 до 99
   const correctAnswer = isEven(number) ? 'yes' : 'no'; // Правильный ответ
-  // Добавим вывод для отладки
-  console.log('playEvenGame output:', { question: number, correctAnswer });
-
   return { question: number, correctAnswer }; // Возвращаем вопрос и правильный ответ
 };
 

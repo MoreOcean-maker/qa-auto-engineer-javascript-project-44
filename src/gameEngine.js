@@ -36,13 +36,12 @@ const runGame = (gameLogic) => {
     } else {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${name}!`);
-      process.exit(1); // Завершаем игру при неправильном ответе
+      return; // Прерываем игру и не вызываем ее повторно
     }
   }
 
   // Победное сообщение после 3 правильных ответов
   console.log(`Congratulations, ${name}!`);
-  process.exit(0); // Завершаем игру с успехом
 };
 
 export default runGame;

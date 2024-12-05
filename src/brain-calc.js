@@ -29,7 +29,7 @@ const generateQuestion = () => {
       break;
   }
 
-  return { question, correctAnswer };
+  return { question, correctAnswer: correctAnswer.toString() }; // Возвращаем правильный ответ как строку
 };
 
 // Описание игры
@@ -38,11 +38,18 @@ const description = 'What is the result of the expression?';
 // Логика игры
 const playMathGame = () => {
   const { question, correctAnswer } = generateQuestion(); // Генерация вопроса и ответа
-  // Возвращаем вопрос и правильный ответ для проверки в игровом движке
+
+  // Проверяем, что возвращаемый объект действительно имеет нужные поля
+  if (!question || !correctAnswer) {
+    console.log('Error: gameLogic must return an object with "question" and "correctAnswer" properties.');
+    process.exit(1); // Завершаем игру с ошибкой
+  }
+
+  // Возвращаем объект с вопросом и правильным ответом
   return { question, correctAnswer };
 };
 
-// Функция для запуска игры
+// Функция для запуска игрыs
 const startMathGame = () => {
   console.log(description); // Выводим описание игры
   runGame(playMathGame); // Передаем логику игры в игровой движок
