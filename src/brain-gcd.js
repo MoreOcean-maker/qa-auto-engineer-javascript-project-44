@@ -1,5 +1,4 @@
 console.log('Find the greatest common divisor of given numbers.');
-import runGame from './gameEngine.js';
 
 // Логика игры для нахождения НОД
 const gcdGameLogic = () => {
@@ -9,8 +8,8 @@ const gcdGameLogic = () => {
 
   // Функция для нахождения НОД
   const gcd = (a, b) => {
-    let num1 = a;
-    let num2 = b;
+    let x = a;
+    let y = b;
 
     while (num2 !== 0) {
       const temp = num2;
@@ -29,4 +28,3 @@ const gcdGameLogic = () => {
 
 // Экспортируем только логику игры
 export default gcdGameLogic;
-
