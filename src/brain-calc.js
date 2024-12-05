@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import runGame from './gameEngine.js'; // Импортируем игровой движок
 
 // Функция для генерации случайного выражения и его результата
 const generateQuestion = () => {
@@ -31,49 +32,20 @@ const generateQuestion = () => {
   return { question, correctAnswer };
 };
 
-// Функция приветствия и запроса имени
-const greetUser = () => {
-  console.log('Welcome to the Brain Games!');
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
-  return name;
+// Описание игры
+const description = 'What is the result of the expression?';
+
+// Логика игры
+const playMathGame = () => {
+  const { question, correctAnswer } = generateQuestion(); // Генерация вопроса и ответа
+  // Возвращаем вопрос и правильный ответ для проверки в игровом движке
+  return { question, correctAnswer };
 };
 
-// Основная логика игры
-const playGame = (name) => {
-  console.log('What is the result of the expression?');
-  let correctAnswers = 0;
-
-  // Игра продолжается до тех пор, пока не будет 3 правильных ответа подряд
-  while (correctAnswers < 3) {
-    const { question, correctAnswer } = generateQuestion(); // Генерация вопроса и ответа
-    console.log(`Question: ${question}`);
-
-    const userAnswer = parseInt(readlineSync.question('Your answer: '), 10); // Ввод ответа от пользователя
-
-    if (userAnswer === correctAnswer) {
-      console.log('Correct!');
-      correctAnswers += 1;
-    } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      console.log(`Game over! Let's try again, ${name}!`);
-      process.exit(0); // Завершаем игру после неправильного ответа
-    }
-  }
-
-  // Победное сообщение после 3 правильных ответов
-  console.log(`Congratulations, ${name}!`);
-  process.exit(0); // Явное завершение процесса после победы
+// Функция для запуска игры
+const startMathGame = () => {
+  console.log(description); // Выводим описание игры
+  runGame(playMathGame); // Передаем логику игры в игровой движок
 };
 
-// Функция запуска игры
-const startGame = () => {
-  const name = greetUser(); // Получаем имя пользователя
-  playGame(name); // Запускаем игру
-};
-
-// Запуск игры
-startGame();
-
-// Экспорт функции startGame (если потребуется в других модулях)
-export default startGame;
+export default startMathGame;
