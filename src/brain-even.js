@@ -15,6 +15,5 @@ const playEvenGame = () => {
 };
 
 // Запуск игры через движок
-runGame(playEvenGame);
-
+export default startGame;
 
