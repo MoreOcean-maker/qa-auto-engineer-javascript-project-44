@@ -1,4 +1,3 @@
-import readlineSync from 'readline-sync';
 
 // Функция для генерации прогрессии
 const generateProgression = () => {
@@ -21,45 +20,19 @@ const generateProgression = () => {
   };
 };
 
-// Функция для начала игры
-const startGame = () => {
-  console.log('Welcome to the Brain Games!');
+// Логика игры для поиска пропавшего числа в прогрессии
+const progressionGameLogic = () => {
+  const { progression, hiddenNumber } = generateProgression();
+  const question = progression; // Прогрессия - это вопрос
+  const correctAnswer = hiddenNumber.toString(); // Правильный ответ - пропавшее число
 
-  // Запрос имени пользователя
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}!`);
-  console.log('What number is missing in the progression?');
-
-  let correctAnswers = 0;
-  const roundsToWin = 3; // Количество правильных ответов для победы
-
-  while (correctAnswers < roundsToWin) {
-    // Генерация прогрессии
-    const { progression, hiddenNumber } = generateProgression();
-
-    // Вопрос пользователю
-    const userAnswer = readlineSync.question(`Question: ${progression}\nYour answer: `);
-
-    // Проверка ответа пользователя
-    if (parseInt(userAnswer, 10) === hiddenNumber) {
-      console.log('Correct!');
-      correctAnswers += 1;
-    } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${hiddenNumber}'.`);
-      console.log(`Let's try again, ${userName}!`);
-      process.exit(0); // Завершаем игру при неправильном ответе
-    }
-  }
-
-  // Победное сообщение после 3 правильных ответов
-  console.log(`Congratulations, ${userName}! You won the game!`);
-  process.exit(0); // Явное завершение игры после победы
+  return { question, correctAnswer }; // Возвращаем вопрос и правильный ответ
 };
 
-// Запуск игры, только если файл выполняется напрямую
-if (import.meta.url === new URL(`file://${process.argv[1]}`)) {
-  startGame();
-}
+// Описание игры
+const description = 'What number is missing in the progression?';
 
-// Экспорт функции startGame
-export default startGame;
+// Экспортируем функцию логики игры для использования в runGame
+export default progressionGameLogic;
+
+
