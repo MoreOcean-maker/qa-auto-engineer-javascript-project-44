@@ -51,9 +51,10 @@ const startGame = () => {
 };
 
 // Запуск игры, только если файл запускается напрямую
-if (require.main === module) {
+if (import.meta.url === new URL('file://' + process.argv[1])) {
   startGame();
 }
 
 // Экспорт функции startGame
 export default startGame;
+
