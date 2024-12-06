@@ -31,7 +31,7 @@ const progressionGameLogic = () => {
 };
 // Функция для запуска игры
 const startProgressionGame = () => {
-  runGame(progressionGameLogic,'progression'); // Передаем логику игры в игровой движок
+  runGame(progressionGameLogic, 'progression'); // Передаем логику игры в игровой движок
 };
 // Экспортируем функцию логики игры для использования в runGame
 export default startProgressionGame;
