@@ -1,4 +1,5 @@
-console.log('What number is missing in the progression?');
+import runGame from './gameEngine.js'; // Импортируем игровой движок
+
 // Функция для генерации прогрессии
 const generateProgression = () => {
   const start = Math.floor(Math.random() * 10) + 1; // начальное число прогрессии
@@ -28,6 +29,10 @@ const progressionGameLogic = () => {
 
   return { question, correctAnswer }; // Возвращаем вопрос и правильный ответ
 };
-
+// Функция для запуска игры
+const startProgressionGame = () => {
+  console.log('What number is missing in the progression?'); // Выводим описание игры
+  runGame(progressionGameLogic); // Передаем логику игры в игровой движок
+};
 // Экспортируем функцию логики игры для использования в runGame
-export default progressionGameLogic;
+export default startProgressionGame;
