@@ -1,4 +1,5 @@
-console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+import runGame from './gameEngine.js'; // Импортируем игровой движок
+
 // Функция для проверки простоты числа
 const isPrime = (number) => {
   if (number <= 1) {
@@ -21,6 +22,10 @@ const primeGameLogic = () => {
 
   return { question: `${question}`, correctAnswer }; // Возвращаем вопрос и правильный ответ
 };
+// Функция для запуска игры
+const StartPrimeGame = () => {
+  console.log('Answer "yes" if given number is prime. Otherwise answer "no".'); // Выводим описание игры
+  runGame(primeGameLogic); // Передаем логику игры в игровой движок
+}
 
-// Экспортируем только логику игры
-export default primeGameLogic;
+export default StartPrimeGame;
