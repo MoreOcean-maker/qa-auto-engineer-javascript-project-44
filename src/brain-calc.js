@@ -40,9 +40,8 @@ const playMathGame = () => {
     console.log('Error: gameLogic must return an object with "question" and "correctAnswer" properties.');
     process.exit(1); // Завершаем игру с ошибкой
   }
-
-  // Возвращаем объект с вопросом и правильным ответом
-  return { question, correctAnswer };
+  // Вместо возврата объекта с question и correctAnswer
+  return { question, correctAnswer: correctAnswer.toString() }; 
 };
 
 // Функция для запуска игры
