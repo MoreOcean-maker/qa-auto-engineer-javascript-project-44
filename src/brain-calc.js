@@ -13,15 +13,15 @@ const generateQuestion = () => {
   // Генерация вопроса и вычисление правильного ответа
   switch (operator) {
     case '+':
-      question = ${num1} + ${num2};
+      question = `${num1} + ${num2}`;
       correctAnswer = num1 + num2;
       break;
     case '-':
-      question = ${num1} - ${num2};
+      question = `${num1} - ${num2}`;
       correctAnswer = num1 - num2;
       break;
     case '*':
-      question = ${num1} * ${num2};
+      question = `${num1} * ${num2}`;
       correctAnswer = num1 * num2;
       break;
     default:
