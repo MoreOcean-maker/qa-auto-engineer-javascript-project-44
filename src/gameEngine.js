@@ -11,10 +11,9 @@ const greetUser = () => {
 // Основной игровой движок с логикой запуска раундов и проверки ответов
 const runGame = (gameLogic) => {
   const name = greetUser(); // Приветствие и получение имени пользователя
-  let correctAnswers = 0;
+  const roundsCount = 3; // Количество раундов
 
-  // Игра продолжается до тех пор, пока не будет 3 правильных ответа подряд
-  while (correctAnswers < 3) {
+  for (let i = 0; i < roundsCount; i += 1) {
     // Запуск уникальной логики игры
     const gameData = gameLogic();
 
@@ -32,15 +31,14 @@ const runGame = (gameLogic) => {
     // Проверка ответа пользователя
     if (answer === correctAnswer) {
       console.log('Correct!');
-      correctAnswers += 1;
     } else {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${name}!`);
-      return; // Прерываем игру и не вызываем ее повторно
+      return; // Завершаем игру при ошибке
     }
   }
 
-  // Победное сообщение после 3 правильных ответов
+  // Победное сообщение после прохождения всех раундов
   console.log(`Congratulations, ${name}!`);
 };
 
