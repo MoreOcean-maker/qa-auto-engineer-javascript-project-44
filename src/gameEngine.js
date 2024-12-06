@@ -33,7 +33,7 @@ const runGame = (gameLogic, gameName) => {
   for (let i = 0; i < roundsCount; i += 1) {
     // Запуск уникальной логики игры
     const gameData = gameLogic();
-    
+
     // Проверяем, что gameLogic возвращает объект с корректными полями
     if (!gameData || !gameData.question || !gameData.correctAnswer) {
       console.log('Error: gameLogic must return an object with "question" and "correctAnswer" properties.');

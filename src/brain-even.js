@@ -10,12 +10,9 @@ const playEvenGame = () => {
   return { question: number, correctAnswer }; // Возвращаем вопрос и правильный ответ
 };
 
-// Описание игры
-const description = 'Answer "yes" if the number is even, otherwise answer "no".';
-
 // Функция для запуска игры
 const startEvenGame = () => {
-  runGame(playEvenGame,'even'); // Передаем логику игры в игровой движок
+  runGame(playEvenGame, 'even'); // Передаем логику игры в игровой движок
 };
 
 export default startEvenGame;
