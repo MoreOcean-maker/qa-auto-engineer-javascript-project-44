@@ -31,9 +31,6 @@ const generateQuestion = () => {
   return { question, correctAnswer: correctAnswer.toString() };
 };
 
-// Описание игры
-const description = 'What is the result of the expression?';
-
 // Логика игры
 const playMathGame = () => {
   const { question, correctAnswer } = generateQuestion(); // Генерация вопроса и ответа
@@ -50,8 +47,7 @@ const playMathGame = () => {
 
 // Функция для запуска игры
 const startMathGame = () => {
-  console.log(description); // Выводим описание игры
-  runGame(playMathGame); // Передаем логику игры в игровой движок
+  runGame(playMathGame, 'calc'); // Передаем логику игры в игровой движок
 };
 
 export default startMathGame;

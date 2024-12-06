@@ -15,8 +15,7 @@ const description = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 // Функция для запуска игры
 const startEvenGame = () => {
-  console.log(description); // Выводим описание игры
-  runGame(playEvenGame); // Передаем логику игры в игровой движок
+  runGame(playEvenGame,'even'); // Передаем логику игры в игровой движок
 };
 
 export default startEvenGame;

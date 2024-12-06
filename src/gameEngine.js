@@ -8,15 +8,32 @@ const greetUser = () => {
   return name;
 };
 
+// Объект с описаниями для разных игр
+const gameDescriptions = {
+  calc: 'What is the result of the expression?',
+  gcd: 'Find the greatest common divisor of given numbers.',
+  even: 'Answer "yes" if the number is even, otherwise answer "no".',
+  prime: 'Answer "yes" if given number is prime. Otherwise answer "no".',
+  progression: 'What number is missing in the progression?',
+};
+
 // Основной игровой движок с логикой запуска раундов и проверки ответов
-const runGame = (gameLogic) => {
+const runGame = (gameLogic, gameName) => {
   const name = greetUser(); // Приветствие и получение имени пользователя
   const roundsCount = 3; // Количество раундов
+
+  // Печатаем описание игры
+  const description = gameDescriptions[gameName];
+  if (description) {
+    console.log(description); // Выводим описание игры
+  } else {
+    console.log('Description not found for this game!');
+  }
 
   for (let i = 0; i < roundsCount; i += 1) {
     // Запуск уникальной логики игры
     const gameData = gameLogic();
-
+    
     // Проверяем, что gameLogic возвращает объект с корректными полями
     if (!gameData || !gameData.question || !gameData.correctAnswer) {
       console.log('Error: gameLogic must return an object with "question" and "correctAnswer" properties.');

@@ -26,8 +26,7 @@ const gcdGameLogic = () => {
 };
 // Функция для запуска игры
 const gcdGameLogiC = () => {
-  console.log('Find the greatest common divisor of given numbers.'); // Выводим описание игры
-  runGame(gcdGameLogic); // Передаем логику игры в игровой движок
+  runGame(gcdGameLogic, 'gcd'); // Передаем логику игры в игровой движок
 };
 // Экспортируем только логику игры
 export default gcdGameLogiC;
