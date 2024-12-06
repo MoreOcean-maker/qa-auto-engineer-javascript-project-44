@@ -41,7 +41,7 @@ const playMathGame = () => {
     process.exit(1); // Завершаем игру с ошибкой
   }
   // Вместо возврата объекта с question и correctAnswer
-  return { question, correctAnswer: correctAnswer.toString() }; 
+  return { question, correctAnswer: correctAnswer.toString() };
 };
 
 // Функция для запуска игры
